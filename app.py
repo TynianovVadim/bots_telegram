@@ -1,10 +1,9 @@
-from loader import bot, create_db
-import asyncio
+from loader import bot
+from utils.db_api import create_db
 
 
 async def on_startup(dp):
     from utils import on_startup_notify
-    await asyncio.sleep(10)
     await create_db()
     await on_startup_notify(dp)
 
